@@ -68,8 +68,8 @@ def make_folder():
     
 # DELETE FOLDERS FUNCTION
 def remove_folder():
-    del_Folder = filedialog.askdirectory()
-    os.rmdir(del_Folder)                                      # folder is deleted
+    del_folder = filedialog.askdirectory()
+    os.rmdir(del_folder)                                      # folder is deleted
     mb.showinfo('confirmation', "Folder deleted.")
 
 
@@ -87,11 +87,9 @@ def list_files():
 # BUILD FILE MANAGER UI USING TKINTER
 root = Tk()                                                                 # creates window
 
-canv = Canvas(root, width = 500, height = 420, bg = 'white')                # create canvas for window
+canv = Canvas(root, width = 500, height = 420, bg = 'white')                
 canv.grid(row = 0, column = 2)
-response = urllib2.urlopen(https://wallpaperaccess.com/full/2969025.jpg)    # store image URL from internet as response
-img = ImageTk.PhotoImage(Image.open(response))                              # open image via URL and save it
-canv.create_image(20, 20, anchor = NW, image = img)                         # create canvas using image as window background
+canv.create_image(20, 20, anchor = NW)                                      # create canvas for window
 
 # creating label and buttons to perform operations
 Label(root, text = "Python File Manager", font = ("Helvetica", 16), fg = "blue").grid(row = 5, column = 2) 
