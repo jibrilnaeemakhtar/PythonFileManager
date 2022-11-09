@@ -89,7 +89,8 @@ root = Tk()                                                                 # cr
 
 canv = Canvas(root, width = 500, height = 420, bg = 'white')                
 canv.grid(row = 0, column = 2)
-canv.create_image(20, 20, anchor = NW)                                      # create canvas for window
+img = ImageTk.PhotoImage(Image.open("D:\\learn\\TechVidvan\\TechVidvan.png"))  
+canv.create_image(20, 20, anchor = NW, image = img)                                      # create canvas for window
 
 # creating label and buttons to perform operations
 Label(root, text = "Python File Manager", font = ("Helvetica", 16), fg = "blue").grid(row = 5, column = 2) 
