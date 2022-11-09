@@ -85,34 +85,24 @@ def list_files():
 
         
 # BUILD FILE MANAGER UI USING TKINTER
-root = Tk()                                                   # creates window
+root = Tk()                                                                 # creates window
 
-canv = Canvas(root, width = 500, height = 420, bg = 'white')  # create canvas to insert image as window background
+canv = Canvas(root, width = 500, height = 420, bg = 'white')                # create canvas for window
 canv.grid(row = 0, column = 2)
-
-response = urllib2.urlopen(https://wallpaperaccess.com/full/2969025.jpg)
-img = ImageTk.PhotoImage(Image.open(response))  
-canv.create_image(20, 20, anchor = NW, image = img)
+response = urllib2.urlopen(https://wallpaperaccess.com/full/2969025.jpg)    # store image URL from internet as response
+img = ImageTk.PhotoImage(Image.open(response))                              # open image via URL and save it
+canv.create_image(20, 20, anchor = NW, image = img)                         # create canvas using image as window background
 
 # creating label and buttons to perform operations
-Label(root, text = "Python File Manager", font = ("Helvetica", 16), fg = "blue").grid(row = 5, column = 2)
-
+Label(root, text = "Python File Manager", font = ("Helvetica", 16), fg = "blue").grid(row = 5, column = 2) 
 Button(root, text = "Open a File", command = open_file).grid(row=15, column =2)
-
 Button(root, text = "Copy a File", command = copy_file).grid(row = 25, column = 2)
-
 Button(root, text = "Delete a File", command = delete_file).grid(row = 35, column = 2)
-
 Button(root, text = "Rename a File", command = rename_file).grid(row = 45, column = 2)
-
 Button(root, text = "Move a File", command = move_file).grid(row = 55, column =2)
-
 Button(root, text = "Make a Folder", command = make_folder).grid(row = 75, column = 2)
-
 Button(root, text = "Remove a Folder", command = remove_folder).grid(row = 65, column =2)
-
 Button(root, text = "List all Files in Folder", command = list_files).grid(row = 85,column = 2)
-
 root.mainloop()
 
 
